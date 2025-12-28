@@ -154,3 +154,4 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
+ALLOWED_HOSTS = ["mymeta-backend.onrender.com"]
