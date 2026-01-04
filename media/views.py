@@ -47,6 +47,7 @@ def add_to_library(request):
         "progress_total",
         "synopsis",
         "notes",
+        "updated_at",
     ]:
         if field in data:
             defaults[field] = data[field]
