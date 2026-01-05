@@ -8,6 +8,7 @@ class Media(models.Model):
         ('movie', 'Movie'),
         ('anime', 'Anime'),
         ('game', 'Game'),
+        ('series','Series'),
     ]
 
     type = models.CharField(max_length=10, choices=MEDIA_TYPES)
