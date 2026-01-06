@@ -31,4 +31,5 @@ class UserMediaSerializer(serializers.ModelSerializer):
             "synopsis",
             "notes",
             "media",
+            "added_at",
         ]
