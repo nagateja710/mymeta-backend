@@ -1,3 +1,5 @@
+from urllib import request
+
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
@@ -76,7 +78,7 @@ class UserMediaViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return UserMedia.objects.filter(user=self.request.user)
+        return UserMedia.objects.filter(user=self.request.user).select_related("media")
 
     # def perform_update(self, serializer):
     #     serializer.save(updated_at=timezone.now())

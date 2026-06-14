@@ -2,3 +2,21 @@ venv\Scripts\activate
 python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
+
+
+
+
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_dump.exe" `
+  "postgresql://meta_db_r8d4_user:Sr2Hpgpyw7IMuAga1rvhD6sCZj2YFysN@dpg-d58kh16uk2gs73dminb0-a.oregon-postgres.render.com/meta_db_r8d4" `
+  -F c -b -v -f render_backup.dump
+
+psql 'postgresql://neondb_owner:npg_B7Nlb6sJZYUM@ep-restless-term-a1v8zemu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
+
+
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_restore.exe" `
+  -d "postgresql://neondb_owner:npg_B7Nlb6sJZYUM@ep-restless-term-a1v8zemu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" `
+  -v `
+  "C:\Users\naga\Desktop\view\projects\taskhive\bookmark\mymeta-backend\render_backup.dump"
